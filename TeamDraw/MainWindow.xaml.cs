@@ -24,18 +24,20 @@ namespace TeamDraw
       {
          InitializeComponent();
          ChangeBackground("Resources/champions2.jpg");
-         Program.ReadJSON();
-         for (int i=1; i<=Program.data.numberTeams; i++)
+
+         if (true == Program.ReadJSON())
          {
-            AddTeamSlot(i);
+            for (int i = 1; i <= Program.data.numberTeams; i++)
+            {
+               AddTeamSlot(i);
+            }
+
+            playersTextBox.Text = String.Join(Environment.NewLine, Program.data.players);
          }
-
-         playersTextBox.Text = String.Join(Environment.NewLine, Program.data.players);
-
-         //AddTeamSlot(3);
-         //AddTeamSlot(4);
-         //AddTeamSlot(5);
-         //AddTeamSlot(6);
+         else
+         {
+            return;
+         }
       }
 
       private void ChangeBackground(string resource)

@@ -14,7 +14,7 @@ namespace TeamDraw
    {
       static public Data data = new Data();
 
-      static public void ReadJSON()
+      static public bool ReadJSON()
       {
          // read JSON directly from a file
          try
@@ -29,7 +29,10 @@ namespace TeamDraw
          catch(Exception ex)
          {
             MessageBox.Show(ex.ToString());
+            return false;
          }
+
+         return true;
       }
 
       static public void ParseJSON(JObject jsonObj)

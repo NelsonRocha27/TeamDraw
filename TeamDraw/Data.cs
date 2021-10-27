@@ -28,4 +28,8 @@ namespace TeamDraw
          numberTeams = 0;
       }
    }
+
+   class Style
+   {
+   }
 }
