@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,3 +34,18 @@ namespace TeamDraw
    {
    }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TeamDraw
+{
+   class Data
+   {
+      List<string> players;
+   }
+}
+>>>>>>> 3291871ac75317cc7ac49b90297f8f9a84d89f10
