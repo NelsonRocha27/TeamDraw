@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace TeamDraw
 {
+   enum Theme
+   {
+      CHAMPIONS,
+      APTIV,
+      DEFAULT
+   }
+
    class Data
    {
-      List<string> players;
+      public int numberTeams;
+      public Theme theme;
+      public List<string> players;
+      public List<string> teams;
+
+      public Data()
+      {
+         players = new List<string>();
+         teams = new List<string>();
+         theme = Theme.DEFAULT;
+         numberTeams = 0;
+      }
    }
 }

@@ -1,0 +1,15 @@
+{
+	"theme": "aptiv",
+	"numberTeams": "5",
+	"players": [
+		"Nelson Rocha",
+		"Diogo Cruz",
+		"Joao Pires",
+		"Joao Barros"
+	],
+	"teams": [
+		"LOL",
+		"SW",
+		"BTC"
+	]
+}

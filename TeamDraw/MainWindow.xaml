@@ -11,12 +11,7 @@
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="0.2*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,7 +19,7 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="0.35*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="playersTextBox" HorizontalAlignment="Stretch" Margin="10,10,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1"/>
-        <Label x:Name="listofPlayersLabel" Content="Label" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"/>
+        <TextBox x:Name="playersTextBox" Background="Black" Foreground="White" HorizontalAlignment="Stretch" Margin="10,10,10,10" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1"/>
+        <!--<Label x:Name="listofPlayersLabel" Content="Players" FontSize="32" Foreground="OrangeRed" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"/>-->
     </Grid>
 </Window>
