@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamDraw"
         mc:Ignorable="d"
-        Title="Team Draw" Height="450" Width="800">
-    <Grid Background="DarkGray">
-        
+        Title="Team Draw">
+    <Grid Name="appGrid" Background="DarkGray" ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.35*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.35*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="playersTextBox" HorizontalAlignment="Stretch" Margin="10,10,10,10" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1"/>
+        <Label x:Name="listofPlayersLabel" Content="Label" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1"/>
     </Grid>
 </Window>
