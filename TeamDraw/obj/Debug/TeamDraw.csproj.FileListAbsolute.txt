@@ -1,0 +1,14 @@
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\bin\Debug\TeamDraw.exe.config
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\bin\Debug\TeamDraw.exe
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\bin\Debug\TeamDraw.pdb
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csprojResolveAssemblyReference.cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\MainWindow.g.cs
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\App.g.cs
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw_MarkupCompile.cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw_MarkupCompile.lref
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\MainWindow.baml
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.g.resources
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.Properties.Resources.resources
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.GenerateResource.Cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.exe
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.pdb
