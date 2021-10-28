@@ -22,6 +22,7 @@ namespace TeamDraw
       public List<string> players;
       public List<string> playersToDraw;
       public List<string> teams;
+      public string picsDir;
 
       public Data()
       {
@@ -30,6 +31,7 @@ namespace TeamDraw
          teams = new List<string>();
          theme = Theme.DEFAULT;
          numberTeams = 0;
+         picsDir = null;
       }
    }
 
@@ -90,7 +92,7 @@ namespace TeamDraw
             this.textBoxBackground = brush;
             brush = (Brush)converter.ConvertFromString("#FFFFFFFF");
             this.textBoxForeground = brush;
-            brush = (Brush)converter.ConvertFromString("#990d3e69");
+            brush = (Brush)converter.ConvertFromString("#BB0d3e69");
             this.drawButtonBackground = brush;
             brush = (Brush)converter.ConvertFromString("#FFFFFFFF");
             this.drawButtonForeground = brush;

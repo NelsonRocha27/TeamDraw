@@ -61,6 +61,10 @@ namespace TeamDraw
          buttonDraw.Background = style.drawButtonBackground;
          buttonDraw.Foreground = style.drawButtonForeground;
          buttonDraw.FontSize = style.drawButtonFontSize;
+
+         buttonPlayer.Background = style.drawButtonBackground;
+         buttonPlayer.Foreground = style.drawButtonForeground;
+         buttonPlayer.FontSize = style.drawButtonFontSize;
       }
 
       private void ChangeBackground(string resource)
@@ -81,6 +85,33 @@ namespace TeamDraw
       public void StopMusic()
       {
          wplayer.controls.stop();
+      }
+
+      public void ShowPhoto(string player)
+      {
+         buttonPlayer.Content = player;
+         try
+         {
+            Console.WriteLine(new Uri(BaseUriHelper.GetBaseUri(this), player + ".png"));
+
+            badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + player + ".png")));
+         }
+         catch
+         {
+            badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @"C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\Resources\" + "aptiv.jpg")));
+            Console.WriteLine("Photo error!");
+         }
+
+         playersTextBox.Visibility = Visibility.Hidden;
+         badge.Visibility = Visibility.Visible;
+         buttonPlayer.Visibility = Visibility.Visible;
+      }
+
+      public void HidePhoto()
+      {
+         playersTextBox.Visibility = Visibility.Visible;
+         badge.Visibility = Visibility.Hidden;
+         buttonPlayer.Visibility = Visibility.Hidden;
       }
 
       private void AddTeamSlot(int i, string teamName)
@@ -137,6 +168,7 @@ namespace TeamDraw
 
       private void buttonDraw_Click(object sender, RoutedEventArgs e)
       {
+         buttonDraw.Visibility = Visibility.Hidden;
          new Thread(Program.Draw).Start();
       }
    }

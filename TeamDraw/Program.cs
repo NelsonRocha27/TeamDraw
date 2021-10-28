@@ -60,17 +60,21 @@ namespace TeamDraw
                MainWindow.appWindow.playersTextBox.Text = String.Join(Environment.NewLine, data.playersToDraw);
             });
 
-
-
             //txtB.Name = "team" + i + "TextBox";
             MainWindow.appWindow.Dispatcher.Invoke(() =>
             {
+               MainWindow.appWindow.ShowPhoto(playerDrafted);
                MainWindow.appWindow.AddPlayerToTeam(playerDrafted, ("team" + (j + 1) + "TextBox"));
             });
 
+            Thread.Sleep(5000);
+            MainWindow.appWindow.Dispatcher.Invoke(() =>
+            {
+               MainWindow.appWindow.HidePhoto();
+            });
 
-            j = (j + 1) % 3;
-            Thread.Sleep(2000);
+            j = (j + 1) % data.teams.Count;
+            Thread.Sleep(2500);
          }
 
          MainWindow.appWindow.Dispatcher.Invoke(() =>
