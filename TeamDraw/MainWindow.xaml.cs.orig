@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,31 +21,24 @@ namespace TeamDraw
    /// </summary>
    public partial class MainWindow : Window
    {
-      Style style;
-
       public MainWindow()
       {
          InitializeComponent();
+         ChangeBackground("Resources/champions2.jpg");
 
          if (true == Program.ReadJSON())
          {
+            for (int i = 1; i <= Program.data.numberTeams; i++)
+            {
+               AddTeamSlot(i);
+            }
 
+            playersTextBox.Text = String.Join(Environment.NewLine, Program.data.players);
          }
          else
          {
             return;
          }
-
-         style = new TeamDraw.Style(Program.data.theme);
-
-         for (int i = 1; i <= Program.data.numberTeams; i++)
-         {
-            AddTeamSlot(i);
-         }
-
-         playersTextBox.Text = String.Join(Environment.NewLine, Program.data.players);
-
-         ChangeBackground(style.background);
       }
 
       private void ChangeBackground(string resource)
@@ -71,8 +65,8 @@ namespace TeamDraw
          label.HorizontalAlignment = HorizontalAlignment.Center;
          label.VerticalAlignment = VerticalAlignment.Bottom;
          label.Margin = new Thickness(1);
-         label.Foreground = style.labelBackground;
-         label.FontSize = style.labelFontSize;
+         label.Foreground = Brushes.OrangeRed;
+         label.FontSize = 32;
          Grid.SetColumn(label, appGrid.ColumnDefinitions.Count - 2);
          Grid.SetRow(label, 1);
          appGrid.Children.Add(label);
@@ -84,12 +78,49 @@ namespace TeamDraw
          txtB.VerticalAlignment = VerticalAlignment.Stretch;
          txtB.Margin = new Thickness(10);
          txtB.TextWrapping = TextWrapping.Wrap;
-         txtB.Background = style.textBoxBackground;
-         txtB.Foreground = style.textBoxForeground;
-         txtB.FontSize = style.textBoxFontSize;
+         txtB.Background = Brushes.Black;
+         txtB.Foreground = Brushes.White;
+         txtB.FontSize = 20;
          Grid.SetColumn(txtB, appGrid.ColumnDefinitions.Count - 2);
          Grid.SetRow(txtB, 2);
          appGrid.Children.Add(txtB);
       }
    }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace TeamDraw
+{
+   /// <summary>
+   /// Interaction logic for MainWindow.xaml
+   /// </summary>
+   public partial class MainWindow : Window
+   {
+      public MainWindow()
+      {
+         InitializeComponent();
+         ChangeBackground("Resources/aptiv.jpg");
+      }
+
+      private void ChangeBackground(string resource)
+      {
+         ImageBrush b = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), resource)));
+         appGrid.Background = b;
+      }
+   }
+}
+>>>>>>> 3291871ac75317cc7ac49b90297f8f9a84d89f10

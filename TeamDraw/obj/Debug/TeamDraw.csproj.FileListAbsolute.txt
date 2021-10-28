@@ -12,3 +12,5 @@ C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.Properties.Re
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.GenerateResource.Cache
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.exe
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.pdb
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\bin\Debug\Newtonsoft.Json.xml
