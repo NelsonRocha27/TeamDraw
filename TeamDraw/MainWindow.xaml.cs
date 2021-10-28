@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,10 +23,13 @@ namespace TeamDraw
    public partial class MainWindow : Window
    {
       Style style;
+      public static WMPLib.WindowsMediaPlayer wplayer;
+      public static MainWindow appWindow;
 
       public MainWindow()
       {
          InitializeComponent();
+         appWindow = this;
 
          if (true == Program.ReadJSON())
          {
@@ -35,16 +40,27 @@ namespace TeamDraw
             return;
          }
 
-         style = new TeamDraw.Style(Program.data.theme);
+         style = new Style(Program.data.theme);
 
          for (int i = 1; i <= Program.data.numberTeams; i++)
          {
-            AddTeamSlot(i);
+            AddTeamSlot(i, Program.data.teams[i - 1]);
          }
 
          playersTextBox.Text = String.Join(Environment.NewLine, Program.data.players);
 
          ChangeBackground(style.background);
+         PlayBackgroundMusic(style.music);
+
+         var converter = new BrushConverter();
+         var brush = (Brush)converter.ConvertFromString("#990d3e69");
+         playersTextBox.Background = brush;
+         brush = (Brush)converter.ConvertFromString("#FFFFFFFF");
+         playersTextBox.Foreground = brush;
+
+         buttonDraw.Background = style.drawButtonBackground;
+         buttonDraw.Foreground = style.drawButtonForeground;
+         buttonDraw.FontSize = style.drawButtonFontSize;
       }
 
       private void ChangeBackground(string resource)
@@ -53,7 +69,21 @@ namespace TeamDraw
          appGrid.Background = b;
       }
 
-      private void AddTeamSlot(int i)
+      private void PlayBackgroundMusic(string resource)
+      {
+         wplayer = new WMPLib.WindowsMediaPlayer();
+         wplayer.settings.setMode("loop", true);
+         wplayer.settings.volume = 4;
+         wplayer.URL = resource;
+         wplayer.controls.play();
+      }
+
+      public void StopMusic()
+      {
+         wplayer.controls.stop();
+      }
+
+      private void AddTeamSlot(int i, string teamName)
       {
          ColumnDefinition columnMargin = new ColumnDefinition();
          ColumnDefinition columnText = new ColumnDefinition();
@@ -67,12 +97,14 @@ namespace TeamDraw
          Label label = new Label();
 
          label.Name = "labelTeam" + i;
-         label.Content = "Team " + i;
+         label.Content = teamName;
          label.HorizontalAlignment = HorizontalAlignment.Center;
          label.VerticalAlignment = VerticalAlignment.Bottom;
          label.Margin = new Thickness(1);
          label.Foreground = style.labelBackground;
          label.FontSize = style.labelFontSize;
+         label.FontFamily = new FontFamily("Formular");
+         label.FontWeight = FontWeights.DemiBold;
          Grid.SetColumn(label, appGrid.ColumnDefinitions.Count - 2);
          Grid.SetRow(label, 1);
          appGrid.Children.Add(label);
@@ -86,10 +118,26 @@ namespace TeamDraw
          txtB.TextWrapping = TextWrapping.Wrap;
          txtB.Background = style.textBoxBackground;
          txtB.Foreground = style.textBoxForeground;
+         txtB.FontFamily = new FontFamily("Formular");
+         txtB.FontWeight = FontWeights.Bold;
          txtB.FontSize = style.textBoxFontSize;
+         txtB.BorderBrush = Brushes.LightYellow;
+         //txtB.BorderThickness = new Thickness(5);
          Grid.SetColumn(txtB, appGrid.ColumnDefinitions.Count - 2);
          Grid.SetRow(txtB, 2);
+         this.RegisterName(txtB.Name, txtB);
          appGrid.Children.Add(txtB);
+      }
+
+      public void AddPlayerToTeam(string player, string textBoxName)
+      {
+         var textBox = (TextBox)this.FindName(textBoxName);
+         textBox.Text += player + '\n';
+      }
+
+      private void buttonDraw_Click(object sender, RoutedEventArgs e)
+      {
+         new Thread(Program.Draw).Start();
       }
    }
 }

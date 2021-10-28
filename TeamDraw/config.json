@@ -1,15 +1,34 @@
 {
 	"theme": "aptiv",
-	"numberTeams": "4",
 	"players": [
 		"Nelson Rocha",
 		"Diogo Cruz",
+		"Luis Costa",
 		"Joao Pires",
-		"Joao Barros"
+		"Joao Barros",
+		"Vasco Duarte",
+		"Rui Ferreira",
+		"Diogo Castro",
+		"Mario Correia",
+		"Rafael Duarte",
+		"Angelo Rodrigues",
+		"Mietek",
+		"Ana Sousa",
+		"Nuno Gago",
+		"Luis Figueiredo",
+		"Joao Sepulveda",
+		"Nuno Silva",
+		"Joao Fernandes",
+		"Angela Meireles",
+		"Joao Freitas",
+		"Tiago Pereira",
+		"Ricardo Guimaraes",
+		"Pedro Vila Cha",
+		"Gil Ribeiro"
 	],
 	"teams": [
-		"LOL",
-		"SW",
-		"BTC"
+		"TEAM 1",
+		"TEAM 2",
+		"TEAM 3"
 	]
 }

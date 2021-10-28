@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/aptiv.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/champions.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/squidgame.wav")]
 
 

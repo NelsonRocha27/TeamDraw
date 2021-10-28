@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Windows;
+using System.Threading;
 
 namespace TeamDraw
 {
@@ -26,7 +27,7 @@ namespace TeamDraw
                ParseJSON(jsonObj);
             }
          }
-         catch(Exception ex)
+         catch (Exception ex)
          {
             MessageBox.Show(ex.ToString());
             return false;
@@ -38,6 +39,44 @@ namespace TeamDraw
       static public void ParseJSON(JObject jsonObj)
       {
          data = JsonConvert.DeserializeObject<Data>(jsonObj.Root.ToString());
+         data.numberTeams = data.teams.Count;
+         data.playersToDraw = data.players;
+      }
+
+      static public void Draw()
+      {
+         int j = 0;
+
+         while (data.playersToDraw.Count > 0)
+         {
+            Random rnd = new Random();
+            int i = rnd.Next(0, data.playersToDraw.Count);
+
+            string playerDrafted = data.playersToDraw[i];
+
+            data.playersToDraw.RemoveAt(i);
+            MainWindow.appWindow.Dispatcher.Invoke(() =>
+            {
+               MainWindow.appWindow.playersTextBox.Text = String.Join(Environment.NewLine, data.playersToDraw);
+            });
+
+
+
+            //txtB.Name = "team" + i + "TextBox";
+            MainWindow.appWindow.Dispatcher.Invoke(() =>
+            {
+               MainWindow.appWindow.AddPlayerToTeam(playerDrafted, ("team" + (j + 1) + "TextBox"));
+            });
+
+
+            j = (j + 1) % 3;
+            Thread.Sleep(2000);
+         }
+
+         MainWindow.appWindow.Dispatcher.Invoke(() =>
+         {
+            MainWindow.appWindow.StopMusic();
+         });
       }
    }
 }
