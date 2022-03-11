@@ -121,6 +121,7 @@
   <ItemGroup>
     <Content Include="Resources\champions.wav" />
     <Content Include="Resources\squidgame.wav" />
+    <Resource Include="Resources\team_draw.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="WMPLib">

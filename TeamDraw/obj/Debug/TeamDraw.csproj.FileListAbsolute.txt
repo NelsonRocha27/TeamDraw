@@ -14,6 +14,8 @@ C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.Properties.Re
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.GenerateResource.Cache
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.exe
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.pdb
-C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csprojResolveAssemblyReference.cache
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\Interop.WMPLib.dll
 C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.ResolveComReference.cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csprojAssemblyReference.cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.CoreCompileInputs.cache
+C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\obj\Debug\TeamDraw.csproj.CopyComplete

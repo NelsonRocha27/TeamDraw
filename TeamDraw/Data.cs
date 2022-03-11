@@ -63,7 +63,7 @@ namespace TeamDraw
          this.music = "";
       }
 
-      public Style(Theme theme)
+      public Style(Theme theme, string dir)
       {
          if (Theme.CHAMPIONS == theme)
          {
@@ -81,7 +81,7 @@ namespace TeamDraw
             this.textBoxFontSize = 20;
             this.labelFontSize = 32;
             this.background = "Resources/champions2.jpg";
-            this.music = @"C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\Resources\champions.wav";
+            this.music = dir + "champions.wav";
 
 
          }
@@ -103,7 +103,7 @@ namespace TeamDraw
             this.textBoxFontSize = 20;
             this.labelFontSize = 32;
             this.background = "Resources/playground.png";
-            this.music = @"C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\Resources\squidgame.mp3";
+            this.music = dir + "squidgame.mp3";
          }
          else
          {

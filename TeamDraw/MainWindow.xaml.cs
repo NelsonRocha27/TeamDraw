@@ -40,7 +40,7 @@ namespace TeamDraw
             return;
          }
 
-         style = new Style(Program.data.theme);
+         style = new Style(Program.data.theme, Program.data.picsDir);
 
          for (int i = 1; i <= Program.data.numberTeams; i++)
          {
@@ -90,28 +90,58 @@ namespace TeamDraw
       public void ShowPhoto(string player)
       {
          buttonPlayer.Content = player;
-         try
-         {
-            Console.WriteLine(new Uri(BaseUriHelper.GetBaseUri(this), player + ".png"));
 
-            badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + player + ".png")));
-         }
-         catch
+         if (Theme.CHAMPIONS == Program.data.theme)
          {
-            badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @"C:\Users\gjq64r\Documents\MOL\TeamDraw\TeamDraw\Resources\" + "aptiv.jpg")));
-            Console.WriteLine("Photo error!");
-         }
+            try
+            {
+               Console.WriteLine(new Uri(BaseUriHelper.GetBaseUri(this), player + ".png"));
 
-         playersTextBox.Visibility = Visibility.Hidden;
-         badge.Visibility = Visibility.Visible;
-         buttonPlayer.Visibility = Visibility.Visible;
+               badgeChampions.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + player + ".png")));
+            }
+            catch
+            {
+               badgeChampions.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + "default.png")));
+               Console.WriteLine("Photo error!");
+            }
+
+            playersTextBox.Visibility = Visibility.Hidden;
+            badgeChampions.Visibility = Visibility.Visible;
+         }
+         else
+         {
+            try
+            {
+               Console.WriteLine(new Uri(BaseUriHelper.GetBaseUri(this), player + ".png"));
+
+               badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + player + ".png")));
+            }
+            catch
+            {
+               badge.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + "default.png")));
+               Console.WriteLine("Photo error!");
+            }
+
+            playersTextBox.Visibility = Visibility.Hidden;
+            badge.Visibility = Visibility.Visible;
+            buttonPlayer.Visibility = Visibility.Visible;
+         }
+         
       }
 
       public void HidePhoto()
       {
-         playersTextBox.Visibility = Visibility.Visible;
-         badge.Visibility = Visibility.Hidden;
-         buttonPlayer.Visibility = Visibility.Hidden;
+         if (Theme.CHAMPIONS == Program.data.theme)
+         {
+            playersTextBox.Visibility = Visibility.Visible;
+            badgeChampions.Visibility = Visibility.Hidden;
+         }
+         else
+         {
+            playersTextBox.Visibility = Visibility.Visible;
+            badge.Visibility = Visibility.Hidden;
+            buttonPlayer.Visibility = Visibility.Hidden;
+         }
       }
 
       private void AddTeamSlot(int i, string teamName)

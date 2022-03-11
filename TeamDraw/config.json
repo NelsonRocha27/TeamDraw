@@ -1,35 +1,21 @@
 {
 	"theme": "aptiv",
 	"players": [
-		"Nelson Rocha",
-		"Diogo Cruz",
-		"Luis Costa",
-		"Joao Pires",
-		"Joao Barros",
-		"Vasco Duarte",
-		"Rui Ferreira",
-		"Diogo Castro",
-		"Mario Correia",
-		"Rafael Duarte",
-		"Angelo Rodrigues",
-		"Mietek",
-		"Ana Sousa",
-		"Nuno Gago",
-		"Luis Figueiredo",
-		"Joao Sepulveda",
-		"Nuno Silva",
-		"Joao Fernandes",
-		"Angela Meireles",
 		"Joao Freitas",
-		"Tiago Pereira",
-		"Ricardo Guimaraes",
-		"Pedro Vila Cha",
-		"Gil Ribeiro"
+		"Joao Freitas",
+		"Joao Freitas",
+		"Joao Freitas",
+		"Vasco Duarte",
+		"Pedro Vila-Cha",
+		"Rafael Duarte",
+		"Joao Sepulveda",
+		"Mario Correia",
+		"Gabriel Sousa"
 	],
 	"teams": [
-		"TEAM 1",
-		"TEAM 2",
-		"TEAM 3"
+		"KITCHEN",
+		"MAGAZINES",
+		"COOKIES"
 	],
-	"picsDir": "C:\\Users\\gjq64r\\Documents\\PicsTeamDraw\\"
+	"picsDir": "C:\\Users\\gjq64r\\Documents\\old documents\\PicsTeamDraw\\"
 }
