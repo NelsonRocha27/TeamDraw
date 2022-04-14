@@ -1,21 +1,20 @@
 {
-	"theme": "aptiv",
+	"theme": "champions",
 	"players": [
-		"Joao Freitas",
-		"Joao Freitas",
-		"Joao Freitas",
-		"Joao Freitas",
-		"Vasco Duarte",
-		"Pedro Vila-Cha",
+		"Nelson Rocha",
+		"Diogo Cruz",
+		"Luis Costa",
+		"Joao Cunha",
+		"Vasco Ferreira",
 		"Rafael Duarte",
-		"Joao Sepulveda",
-		"Mario Correia",
-		"Gabriel Sousa"
+		"Jorge Faria",
+		"Tiago Barros",
+		"Joao Barros",
+		"Mario Correia"
 	],
 	"teams": [
-		"KITCHEN",
-		"MAGAZINES",
-		"COOKIES"
+		"BRANCOS",
+		"PRETOS"
 	],
-	"picsDir": "C:\\Users\\gjq64r\\Documents\\old documents\\PicsTeamDraw\\"
+	"picsDir": "C:\\Users\\gjq64r\\Documents\\old transfers\\TeamDrawchamps\\TeamDraw\\"
 }

@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:TeamDraw"
         mc:Ignorable="d"
         Icon="Resources/team_draw.ico"
-        Title="Team Draw">
-    <Grid Name="appGrid" Background="DarkGray" ShowGridLines="False">
+        Title="Team Draw" KeyDown="PAUSE">
+    <Grid Name="appGrid" Background="DarkGray" ShowGridLines="False" KeyDown="pressed" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="2*"/>
