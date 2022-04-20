@@ -74,13 +74,21 @@ namespace TeamDraw
             appGrid.Background = b;
         }
 
-        private void PlayBackgroundMusic(string resource)
+        public void PlayBackgroundMusic(string resource, bool loop = true)
         {
             wplayer = new WMPLib.WindowsMediaPlayer();
-            wplayer.settings.setMode("loop", true);
+            wplayer.settings.setMode("loop", loop);
             wplayer.settings.volume = 4;
             wplayer.URL = resource;
             wplayer.controls.play();
+        }
+
+        public void PlayMusicUntilFinishes()
+        {
+            Thread.Sleep(1000);
+            double duration = wplayer.controls.currentItem.duration;
+            Console.WriteLine(duration);
+            Thread.Sleep((int)duration*1000);
         }
 
         public void StopMusic()

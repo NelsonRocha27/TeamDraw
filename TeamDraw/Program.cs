@@ -60,14 +60,26 @@ namespace TeamDraw
                MainWindow.appWindow.playersTextBox.Text = String.Join(Environment.NewLine, data.playersToDraw);
             });
 
-            //txtB.Name = "team" + i + "TextBox";
-            MainWindow.appWindow.Dispatcher.Invoke(() =>
+                //txtB.Name = "team" + i + "TextBox";
+
+
+                MainWindow.appWindow.Dispatcher.Invoke(() =>
             {
                MainWindow.appWindow.ShowPhoto(playerDrafted);
                MainWindow.appWindow.AddPlayerToTeam(playerDrafted, ("team" + (j + 1) + "TextBox"));
             });
 
-            Thread.Sleep(5000);
+                if (playerDrafted == "Diogo Cruz")
+                {
+                    MainWindow.appWindow.StopMusic();
+                    MainWindow.appWindow.PlayBackgroundMusic("C:\\Users\\gjq64r\\Documents\\old transfers\\TeamDrawchamps\\TeamDraw\\ParabensDiogo_comVozesCortado.wav", false);
+                    MainWindow.appWindow.PlayMusicUntilFinishes();
+                    MainWindow.appWindow.PlayBackgroundMusic("C:\\Users\\gjq64r\\Documents\\old transfers\\TeamDrawchamps\\TeamDraw\\champions.wav");
+                }
+                else
+                {
+                    Thread.Sleep(5000);
+                }
             MainWindow.appWindow.Dispatcher.Invoke(() =>
             {
                MainWindow.appWindow.HidePhoto();
