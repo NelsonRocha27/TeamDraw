@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:TeamDraw"
         mc:Ignorable="d"
         Icon="Resources/team_draw.ico"
-        Title="Team Draw" KeyDown="PAUSE">
-    <Grid Name="appGrid" Background="DarkGray" ShowGridLines="False" KeyDown="pressed" >
+        Title="Team Draw" KeyDown="Pause">
+    <Grid Name="appGrid" Background="DarkGray" ShowGridLines="False">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="2*"/>
@@ -35,7 +35,24 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Grid>
-        <Grid Name="imageGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+      <Grid Name="imageGridStarWars" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.15*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="0.15*"/>
+         </Grid.ColumnDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height=".35*"/>
+         </Grid.RowDefinitions>
+         <Rectangle x:Name="badgeStarWars" Stroke="#00000000" Visibility="Hidden" Grid.Column="1" Grid.Row="0">
+            <Rectangle.Fill>
+               <ImageBrush/>
+            </Rectangle.Fill>
+         </Rectangle>
+         <Button x:Name="buttonPlayerStarWars" Content="" Margin="0,0,0,0" FontFamily="Formular" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Visibility="Hidden"/>
+      </Grid>
+      <Grid Name="imageGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -51,7 +68,7 @@
                     <ImageBrush/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button x:Name="buttonPlayer" Content="Ricardo Guimaraes" Margin="0,1,0,80" FontFamily="Formular" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Visibility="Hidden"/>
+            <Button x:Name="buttonPlayer" Content="" Margin="0,1,0,80" FontFamily="Formular" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Visibility="Hidden"/>
         </Grid>        
         <TextBox x:Name="playersTextBox" FontFamily="Formular" FontWeight="Bold" Background="Transparent" Foreground="White" HorizontalAlignment="Stretch" Margin="10,10,10,10" Visibility="Visible" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1"/>
         <Grid Name="buttonGrid" Background="Transparent" ShowGridLines="False" Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">

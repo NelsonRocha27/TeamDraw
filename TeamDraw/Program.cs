@@ -75,11 +75,12 @@ namespace TeamDraw
 
             j = (j + 1) % data.teams.Count;
             Thread.Sleep(2500);
-                while(MainWindow.appWindow.pause == true)
-                {
 
-                }
+            while (MainWindow.appWindow.pause == true)
+            {
+
             }
+         }
 
          MainWindow.appWindow.Dispatcher.Invoke(() =>
          {

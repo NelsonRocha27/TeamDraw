@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/champions.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/imperialmarch.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/squidgame.wav")]
 
 

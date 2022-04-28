@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -53,25 +54,32 @@ namespace TeamDraw
             ChangeBackground(style.background);
             PlayBackgroundMusic(style.music);
 
-            var converter = new BrushConverter();
-            var brush = (Brush)converter.ConvertFromString("#990d3e69");
-            playersTextBox.Background = brush;
-            brush = (Brush)converter.ConvertFromString("#FFFFFFFF");
-            playersTextBox.Foreground = brush;
+            playersTextBox.Background = style.textBoxPlayersBackground;
+            playersTextBox.Foreground = style.textBoxPlayersForeground;
+            playersTextBox.FontFamily = style.fontFamily;
 
             buttonDraw.Background = style.drawButtonBackground;
             buttonDraw.Foreground = style.drawButtonForeground;
             buttonDraw.FontSize = style.drawButtonFontSize;
+            buttonDraw.FontFamily = style.fontFamily;
 
             buttonPlayer.Background = style.drawButtonBackground;
             buttonPlayer.Foreground = style.drawButtonForeground;
             buttonPlayer.FontSize = style.drawButtonFontSize;
+            buttonPlayer.FontFamily = style.fontFamily;
         }
 
-        private void ChangeBackground(string resource)
+        private void ChangeBackground(string resource = "")
         {
-            ImageBrush b = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), resource)));
-            appGrid.Background = b;
+            if (resource != "")
+            {
+                ImageBrush b = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), resource)));
+                appGrid.Background = b;
+            }
+            else
+            {
+                appGrid.Background = Brushes.Black;
+            }
         }
 
         private void PlayBackgroundMusic(string resource)
@@ -109,7 +117,30 @@ namespace TeamDraw
                 playersTextBox.Visibility = Visibility.Hidden;
                 badgeChampions.Visibility = Visibility.Visible;
             }
-            else
+            else if (Theme.STARWARS == Program.data.theme)
+            {
+               try
+               {
+                  Console.WriteLine(new Uri(BaseUriHelper.GetBaseUri(this), player + ".png"));
+
+                  badgeStarWars.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + player + ".png")));
+               }
+               catch
+               {
+               badgeStarWars.Fill = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), Program.data.picsDir + "default.png")));
+                  Console.WriteLine("Photo error!");
+               }
+
+               playersTextBox.Visibility = Visibility.Hidden;
+               badgeStarWars.Visibility = Visibility.Visible;
+               buttonPlayerStarWars.Content = player;
+               buttonPlayerStarWars.Foreground = buttonPlayer.Foreground;
+               buttonPlayerStarWars.Background = buttonPlayer.Background;
+               buttonPlayerStarWars.FontFamily = buttonPlayer.FontFamily;
+               buttonPlayerStarWars.FontSize = buttonPlayer.FontSize + 10;
+               buttonPlayerStarWars.Visibility = Visibility.Visible;
+         }
+         else
             {
                 try
                 {
@@ -137,7 +168,13 @@ namespace TeamDraw
                 playersTextBox.Visibility = Visibility.Visible;
                 badgeChampions.Visibility = Visibility.Hidden;
             }
-            else
+            else if (Theme.STARWARS == Program.data.theme)
+            {
+               playersTextBox.Visibility = Visibility.Visible;
+               badgeStarWars.Visibility = Visibility.Hidden;
+               buttonPlayerStarWars.Visibility = Visibility.Hidden;
+         }
+         else
             {
                 playersTextBox.Visibility = Visibility.Visible;
                 badge.Visibility = Visibility.Hidden;
@@ -165,7 +202,7 @@ namespace TeamDraw
             label.Margin = new Thickness(1);
             label.Foreground = style.labelBackground;
             label.FontSize = style.labelFontSize;
-            label.FontFamily = new FontFamily("Formular");
+            label.FontFamily = style.fontFamily;
             label.FontWeight = FontWeights.DemiBold;
             Grid.SetColumn(label, appGrid.ColumnDefinitions.Count - 2);
             Grid.SetRow(label, 1);
@@ -180,8 +217,8 @@ namespace TeamDraw
             txtB.TextWrapping = TextWrapping.Wrap;
             txtB.Background = style.textBoxBackground;
             txtB.Foreground = style.textBoxForeground;
-            txtB.FontFamily = new FontFamily("Formular");
-            txtB.FontWeight = FontWeights.Bold;
+            txtB.FontFamily = style.fontFamily;
+            //txtB.FontWeight = FontWeights.Bold;
             txtB.FontSize = style.textBoxFontSize;
             txtB.BorderBrush = Brushes.LightYellow;
             //txtB.BorderThickness = new Thickness(5);
@@ -203,13 +240,7 @@ namespace TeamDraw
             new Thread(Program.Draw).Start();
         }
 
-        private void pressed(object sender, KeyEventArgs e)
-        {
-
-
-        }
-
-        private void PAUSE(object sender, KeyEventArgs e)
+        private void Pause(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
             {
@@ -219,5 +250,5 @@ namespace TeamDraw
                     pause = true;
             }
         }
-    }
+   }
 }

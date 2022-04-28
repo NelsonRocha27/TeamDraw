@@ -1,20 +1,39 @@
 {
-	"theme": "champions",
+	"theme": "starwars",
 	"players": [
-		"Nelson Rocha",
-		"Diogo Cruz",
-		"Luis Costa",
-		"Joao Cunha",
-		"Vasco Ferreira",
+		"Angela Meireles",
+		"Margarida Simoes",
+		"Eduardo Grilo",
+		"Rui Ferreira",
 		"Rafael Duarte",
-		"Jorge Faria",
-		"Tiago Barros",
+		"Joao Sepulveda",
+		"Diogo Castro",
+		"Joao Freitas",
+		"Mietek",
+		"Diogo Cruz",
+		"Guilherme Azevedo",
+		"Andre Guimaraes",
+		"Mario Campos",
+		"Alexandra Sepulveda",
+		"Joao Soares",
+		"Nelson Rocha",
+		"Soraia vilaca",
+		"Bruna Gomes",
+		"vasco Ferreira",
+		"Gabriel Sousa",
+		"Joao Fernandes",
 		"Joao Barros",
-		"Mario Correia"
+		"Nuno Silva",
+		"Miguel Fonte",
+		"Joao Pires",
+		"Jorge Faria",
+		"Joao Emanuel Silva" 
 	],
 	"teams": [
-		"BRANCOS",
-		"PRETOS"
+		"team yoda",
+		"team vader",
+		"team luke",
+		"team leia"
 	],
-	"picsDir": "C:\\Users\\gjq64r\\Documents\\old transfers\\TeamDrawchamps\\TeamDraw\\"
+	"picsDir": "C:\\Users\\gjq64r\\Documents\\TeamBuilding\\"
 }
